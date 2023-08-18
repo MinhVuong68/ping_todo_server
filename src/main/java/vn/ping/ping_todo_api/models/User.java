@@ -1,13 +1,16 @@
 package vn.ping.ping_todo_api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+import java.util.List;
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="_user")
+@Data
 @Getter
 @Setter
 @Entity
@@ -25,4 +28,7 @@ public class User {
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Task> tasks;
 }

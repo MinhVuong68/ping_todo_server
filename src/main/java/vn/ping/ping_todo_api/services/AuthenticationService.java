@@ -20,7 +20,6 @@ import vn.ping.ping_todo_api.security.UserDetail;
 import vn.ping.ping_todo_api.validation.UserValidator;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class AuthenticationService implements IAuthenticationService{
 
